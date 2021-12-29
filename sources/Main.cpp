@@ -25,15 +25,15 @@ private:
 		size_t delta = delim.length();
 
 		while ((next = str.find(delim, prev)) != std::string::npos) {
-			//Отладка-start
+			//ГЋГІГ«Г Г¤ГЄГ -start
 			std::string tmp = str.substr(prev, next - prev);
-			//Отладка-end
+			//ГЋГІГ«Г Г¤ГЄГ -end
 			arr.push_back(str.substr(prev, next - prev));
 			prev = next + delta;
 		}
-		//Отладка-start
+		//ГЋГІГ«Г Г¤ГЄГ -start
 		std::string tmp = str.substr(prev);
-		//Отладка-end
+		//ГЋГІГ«Г Г¤ГЄГ -end
 		arr.push_back(str.substr(prev));
 
 		std::vector<int> int_arr;
@@ -153,7 +153,7 @@ private:
 
 	void x_processing(double const x, int i, std::string& member)
 	{
-		// i - индекс x
+		// i - ГЁГ­Г¤ГҐГЄГ± x
 		int degree = 1;
 		if (member[i + 1] == '^')
 		{
@@ -194,7 +194,7 @@ public:
 		: m_func(func)
 	{}
 
-	//удаляет пробелы
+	//ГіГ¤Г Г«ГїГҐГІ ГЇГ°Г®ГЎГҐГ«Г»
 	void func_split()
 	{
 		size_t len = m_func.length();
@@ -232,7 +232,7 @@ public:
 };
 
 
-//Класс с методами постороения графиков и оси координат
+//ГЉГ«Г Г±Г± Г± Г¬ГҐГІГ®Г¤Г Г¬ГЁ ГЇГ®Г±ГІГ®Г°Г®ГҐГ­ГЁГї ГЈГ°Г ГґГЁГЄГ®Гў ГЁ Г®Г±ГЁ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІ
 class Graphics
 {
 private:
@@ -244,10 +244,10 @@ public:
 	Graphics(sf::RenderWindow& window, sf::Font font, Get_Coefficient& gc) : m_window(window), m_gc(gc), m_font(font)
 	{}
 
-	//Создание оси координат
+	//Г‘Г®Г§Г¤Г Г­ГЁГҐ Г®Г±ГЁ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІ
 	void coordinate_axes()
 	{
-		//Ось x
+		//ГЋГ±Гј x
 		sf::Vertex x_axis[] =
 		{
 			sf::Vertex(sf::Vector2f(0.f, 400.f), sf::Color::Black),
@@ -283,7 +283,7 @@ public:
 			m_window.draw(x_axis_line, 2, sf::Lines);
 		}
 
-		//Ось y
+		//ГЋГ±Гј y
 		sf::Vertex y_axis[] =
 		{
 			sf::Vertex(sf::Vector2f(400.0, 0.f), sf::Color::Black),
@@ -336,13 +336,13 @@ public:
 		arrow.setPointCount(3);
 		arrow.setFillColor(sf::Color::Black);
 
-		//стрелка для оси y
+		//Г±ГІГ°ГҐГ«ГЄГ  Г¤Г«Гї Г®Г±ГЁ y
 		arrow.setPoint(0, sf::Vector2f(400.f, 0.f));
 		arrow.setPoint(1, sf::Vector2f(392.f, 10.f));
 		arrow.setPoint(2, sf::Vector2f(408.f, 10.f));
 		m_window.draw(arrow);
 
-		//стрелка для оси x
+		//Г±ГІГ°ГҐГ«ГЄГ  Г¤Г«Гї Г®Г±ГЁ x
 		arrow.setPoint(0, sf::Vector2f(800.f, 400.f));
 		arrow.setPoint(1, sf::Vector2f(790.f, 392.f));
 		arrow.setPoint(2, sf::Vector2f(790.f, 408.f));
@@ -399,7 +399,7 @@ public:
 
 	void auxiliary_axis(double x, double y)
 	{
-		// очь y
+		// Г®Г·Гј y
 		if (x < 40) 
 		{
 			sf::Vertex y_auxiliary_axis[] =
@@ -431,7 +431,7 @@ public:
 			x_change_coord_output((x - 400) / 20);
 		}
 
-		//ось x
+		//Г®Г±Гј x
 		if (y < 0)
 		{
 			sf::Vertex x_auxiliary_axis[] =
@@ -500,8 +500,6 @@ void new_main(std::string function)
 	std::cout << "---------------------------------------------------------------------" << std::endl;
 	for (int i = -100; i < 100; i++)
 	{
-		std::cout << "--------------\n " << i << std::endl;
-		std::cout << 400 + (static_cast<float>(i) / 4) * 20 << ' ' << 400 - Get_Coefficient.get_y(static_cast<float>(i) / 4) * 20 << std::endl;
 		y_array[i + 100] = 400 - Get_Coefficient.get_y(static_cast<float>(i) / 4) * 20;
 	}
 	
