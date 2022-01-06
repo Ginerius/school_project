@@ -478,7 +478,6 @@ public:
 
 void new_main(std::string function)
 {
-	std::cout << function << std::endl;
 	
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
@@ -497,7 +496,6 @@ void new_main(std::string function)
 	y_array.resize(201);
 
 	
-	std::cout << "---------------------------------------------------------------------" << std::endl;
 	for (int i = -100; i < 100; i++)
 	{
 		y_array[i + 100] = 400 - Get_Coefficient.get_y(static_cast<float>(i) / 4) * 20;
